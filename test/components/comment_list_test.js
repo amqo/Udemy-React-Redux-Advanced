@@ -14,7 +14,7 @@ describe('CommentList', () => {
     expect(component.find('li').length).to.equal(2);
   });
 
-  it('shows each comment that is proviced', () => {
+  it('shows each comment that is provided', () => {
     expect(component).to.contain('New Comment');
     expect(component).to.contain('Other New Comment');
   });
