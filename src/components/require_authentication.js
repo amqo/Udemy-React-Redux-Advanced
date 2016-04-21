@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {
-
     static contextTypes = {
       router: React.PropTypes.object
     }
@@ -13,11 +12,9 @@ export default function(ComposedComponent) {
         this.context.router.push('/');
       }
     }
-
     componentWillMount() {
       this.checkIfAuthenticated(this.props);
     }
-
     componentWillUpdate(nextProps) {
       this.checkIfAuthenticated(nextProps);
     }
