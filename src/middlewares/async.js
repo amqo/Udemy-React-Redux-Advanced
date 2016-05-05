@@ -4,9 +4,9 @@ export default function({ dispatch }) {
       return next(action);
     }
     action.payload
-    .then(response => {
-      const newAction = { ...action, payload: response };
-      dispatch(newAction);
-    });
+      .then(response => {
+        const newAction = { ...action, payload: response };
+        dispatch(newAction);
+      });
   };
 }
