@@ -4,9 +4,11 @@ import * as actions from '../../actions';
 
 class Signin extends Component {
 
+  componentWillUnmount() {
+    this.props.authError(null);
+  }
+
   handleFormSubmit({ email, password }) {
-    console.log(email, password);
-    // Need to do something to log user in
     this.props.signinUser({ email, password });
   }
 
@@ -26,11 +28,11 @@ class Signin extends Component {
     return (
       <form onSubmit={ handleSubmit(this.handleFormSubmit.bind(this)) }>
         <fieldset className="form-group">
-          <label htmlFor="">Email:</label>
+          <label>Email:</label>
           <input { ...email } type="text" className="form-control"/>
         </fieldset>
         <fieldset className="form-group">
-          <label htmlFor="">Password:</label>
+          <label>Password:</label>
           <input { ...password } type="password" className="form-control"/>
         </fieldset>
         { this.renderAlert() }
