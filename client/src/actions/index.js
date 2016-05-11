@@ -40,10 +40,10 @@ export function signupUser({ email, password }) {
         // - Redirect to the route '/feature'
         browserHistory.push('/feature');
       })
-      .catch(() => {
+      .catch(response => {
         // If request is bad
         // - Show an error to the user
-        dispatch(authError('Bad Signup Info'));
+        dispatch(authError(response.data.error));
       });
   }
 }
