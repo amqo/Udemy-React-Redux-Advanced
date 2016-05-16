@@ -8,7 +8,6 @@ export default function(ComposedComponent) {
     }
 
     checkIfAuthenticated(props) {
-      console.log('User is authenticated?', props.authenticated);
       if (!props.authenticated) {
         this.context.router.push('/');
       }
